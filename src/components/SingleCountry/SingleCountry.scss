@@ -1,0 +1,30 @@
+@import "src/assets/styles/variables";
+@import "src/assets/styles/media";
+
+.single-country {
+  &-wrapper {
+    margin: 100px auto;
+    max-width: 600px;
+    border: 1px solid $main;
+    border-radius: 10px;
+    background-color: $main-light;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include media("mobile") {
+      width: 300px;
+    }
+    h2 {
+      margin: 35px;
+      font-size: 50px;
+      color: $main-dark;
+      line-height: 1;
+      text-align: center;
+    }
+    p {
+      margin: 10px;
+    }
+  }
+}

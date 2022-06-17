@@ -1,0 +1,81 @@
+@import "src/assets/styles/variables";
+@import "src/assets/styles/media";
+
+.table-wrapper {
+  max-height: 100vh;
+  overflow: scroll;
+  width: 90%;
+  margin: 50px auto;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th,
+  td {
+    border: 1px solid $grey-border;
+    padding: 8px;
+  }
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: $main-light;
+    color: $main-dark;
+  }
+  tbody {
+    tr {
+      cursor: pointer;
+    }
+  }
+  
+  tr:nth-child(even) {
+    background-color: $grey-background;
+  }
+
+  tr:hover {
+    background-color: $grey-border;
+  }
+
+  @include media("mobile") {
+    max-height: none;
+
+    table tbody {
+      border: none !important;
+    }
+
+    table caption {
+      font-size: 1.3em;
+    }
+
+    table thead {
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    table tr {
+      display: block;
+      margin-bottom: 20px;
+      border: none;
+    }
+
+    table td {
+      border: 1px solid $grey-border !important;
+      display: block;
+      font-size: 0.8em;
+      text-align: right;
+    }
+
+    table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+    }
+  }
+}

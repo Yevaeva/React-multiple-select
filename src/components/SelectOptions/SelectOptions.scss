@@ -1,0 +1,36 @@
+@import "src/assets/styles/variables";
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: solid $grey-border;
+  border-width: 0 1px;
+  background: #fff;
+  max-height: calc(100vh - 200px);
+  overflow: scroll;
+  .option {
+    padding: 10px 15px;
+    border-bottom: 1px solid $grey-border;
+    cursor: pointer;
+
+    &.selected {
+      border: 1px solid $main;
+      margin: -1px -1px 0;
+      background: $main-light;
+    }
+    &:hover {
+      background: $grey-background;
+    }
+  }
+}
+
+.checkbox {
+  @include checkbox;
+
+  .selected & {
+    border-color: $main-dark;
+    background: $main;
+  }
+}

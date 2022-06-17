@@ -1,0 +1,91 @@
+@import "src/assets/styles/variables";
+@import "src/assets/styles/media";
+
+svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.multiselect-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .select {
+    position: relative;
+    display: inline-block;
+    width: 600px;
+
+    &:focus {
+      outline: 0;
+
+      & .selection {
+        box-shadow: 0 0 1px 1px $main;
+      }
+    }
+    @include media("mobile") {
+      width: 300px;
+    }
+  }
+  .selection {
+    position: relative;
+    padding: 5px;
+    border: 1px solid $grey-border;
+    background: #fff;
+    .selection-items {
+      max-height: 200px;
+      overflow: scroll;
+    }
+  }
+  .value {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+  }
+
+  .multiple {
+    padding-right: 30px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background: $main-light;
+    color: $main;
+  }
+  .delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    padding: 10px;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+  .placeholder {
+    padding: 5px 10px;
+    color: $grey-text;
+  }
+  .arrow {
+    display: block;
+    padding: 10px;
+    font-size: 10px;
+    color: $grey-text;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    input {
+      width: 100%;
+      border: none;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+}
+
+header {
+  text-align: center;
+  margin: 100px;
+}

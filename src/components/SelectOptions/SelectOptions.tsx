@@ -13,28 +13,26 @@ const SelectOptions = ({ options, handleClick }: ISelectOptions) => {
   const { countryNames } = useSelector((state: RootState) => state.country);
 
   return (
-      <div className="options" data-testid="options">
-        {options.map((option, index) => (
-          <div
-            key={option.countryName}
-            data-value={option.countryName}
-            data-testid="option"
-            className={
-              countryNames.includes(option.countryName)
-                ? "option selected"
-                : "option"
-            }
-            onClick={handleClick}
-          >
-            <span className="checkbox">
-              {countryNames.includes(option.countryName) ? (
-                <CheckedIcon />
-              ) : null}
-            </span>
-            {option.countryName}
-          </div>
-        ))}
-      </div>
+    <div className="options" data-testid="options">
+      {options.map((option, index) => (
+        <div
+          key={option.countryName}
+          data-value={option.countryName}
+          data-testid="option"
+          className={
+            countryNames.includes(option.countryName)
+              ? "option selected"
+              : "option"
+          }
+          onClick={handleClick}
+        >
+          <span className="checkbox">
+            {countryNames.includes(option.countryName) ? <CheckedIcon /> : null}
+          </span>
+          {option.countryName}
+        </div>
+      ))}
+    </div>
   );
 };
 
